@@ -17,6 +17,7 @@ function removeTempFolder2() {
   cd ../..; rm -rf "${tempBuildFolder}"; return;
 }
 
+<<<<<<< HEAD
 PEM "    This script will try to install some packages in your system."
 PEM "    Plase use it only in a development environment."
 
@@ -29,6 +30,8 @@ while true; do
     esac
 done
 
+=======
+>>>>>>> df1058c7... On branch db_interface/building/arch_support
 # Check lsb_release
 which $lsbCommand > /dev/null 2>&1
 RC=$?
@@ -72,7 +75,11 @@ printf "  - Installing build dependencies... \n";
 if [ $LSB_DISTRO == $lsbDebian ]; then
   INSTALL_DEPS_ERROR=$( { sudo apt-get install gcc cmake git pkg-config sqlite3 libsqlite3-dev -y > /dev/null; } 2>&1 )
 elif [ $LSB_DISTRO == $lsbArch ]; then
+<<<<<<< HEAD
   INSTALL_DEPS_ERROR=$( { sudo pacman -S --noconfirm base-devel gcc cmake git pkg-config sqlite3 openssl tcl > /dev/null; } 2>&1 )
+=======
+  INSTALL_DEPS_ERROR=$( { sudo pacman -S --noconfirm base-devel gcc cmake git pkg-config sqlite3  > /dev/null; } 2>&1 )
+>>>>>>> df1058c7... On branch db_interface/building/arch_support
 fi
 
 if [ $? -ne 0 ]; then
