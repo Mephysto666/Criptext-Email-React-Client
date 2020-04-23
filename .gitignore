@@ -49,3 +49,6 @@ binding.gyp
 #Alice
 alice_logs.txt
 error.log
+
+# Signal linux deps
+signal_interface/installation/linux/deps/
