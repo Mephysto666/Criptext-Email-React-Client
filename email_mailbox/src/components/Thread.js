@@ -49,16 +49,10 @@ class Thread extends Component {
               })}
             </div>
             <div class="thread-navigation-control">
-              <div class="thread-previous-button">
-                {/* <i class="icon-thread-next-button">
-                  ::before
-                </i> */}
+              <div class="thread-previous-button" title={string.mailbox.previous_message}>
                 <i className="icon-arrow-right" />
               </div>
-              <div class="thread-next-button">
-                {/* <i class="icon-thread-next-button">
-                  ::before
-                </i> */}
+              <div class="thread-next-button" title={string.mailbox.next_message}>
                 <i className="icon-arrow-right" />
               </div>
             </div>
