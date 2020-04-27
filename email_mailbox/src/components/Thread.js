@@ -48,6 +48,20 @@ class Thread extends Component {
                 );
               })}
             </div>
+            <div class="thread-navigation-control">
+              <div class="thread-previous-button">
+                {/* <i class="icon-thread-next-button">
+                  ::before
+                </i> */}
+                <i className="icon-arrow-right" />
+              </div>
+              <div class="thread-next-button">
+                {/* <i class="icon-thread-next-button">
+                  ::before
+                </i> */}
+                <i className="icon-arrow-right" />
+              </div>
+            </div>
             <div
               className={`thread-starred-status ${
                 this.props.starred ? 'starred-on' : 'starred-off'
