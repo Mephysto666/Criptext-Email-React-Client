@@ -9,7 +9,6 @@ import Message from '../containers/Message';
 import string from '../lang';
 import './thread.scss';
 import { clearKeys } from './../utils/FileManager';
-// import ReactTooltip from 'react-tooltip';
 import HeaderActionTooltip from './HeaderActionTooltip';
 
 const MIN_INDEX_TO_COLLAPSE = 3;
@@ -51,13 +50,35 @@ class Thread extends Component {
               })}
             </div>
             <div className="thread-navigation-control">
-              <div id="btnPrevNav" className="thread-previous-button" data-tip data-for="btnPrevNav" onClick={() => alert('Prev clicked!')}>
+              <div 
+                id="btnPrevNav"
+                className={`thread-previous-button ${
+                  this.props.isLastThread ? 'button-nav-disabled' : ''
+                }`}
+                data-tip
+                data-for="btnPrevNav"
+                onClick={
+                  !this.props.isLastThread && (() => alert('Prev clicked!'))
+                }
+              >
                 <i className="icon-arrow-right" />
-                <HeaderActionTooltip className="ignore-transform" target="btnPrevNav" tip={string.mailbox.previous_message} />
+                {!this.props.isLastThread && (
+                  <HeaderActionTooltip className="ignore-transform" target="btnPrevNav" tip={string.mailbox.previous_message} />
+                )}
               </div>
-              <div id="btnNextNav" data-tip data-for="btnNextNav" onClick={() => alert('Next clicked!')}>
+              <div
+                id="btnNextNav"
+                className={this.props.isFirstThread ? 'button-nav-disabled' : ''}
+                data-tip
+                data-for="btnNextNav"
+                onClick={
+                  !this.props.isFirstThread && (() => alert('Next clicked!'))
+                }
+              >
                 <i className="icon-arrow-right" />
-                <HeaderActionTooltip target="btnNextNav" tip={string.mailbox.next_message} />
+                {!this.props.isFirstThread && (
+                  <HeaderActionTooltip target="btnNextNav" tip={string.mailbox.next_message} />
+                )}
               </div>
             </div>
             <div
