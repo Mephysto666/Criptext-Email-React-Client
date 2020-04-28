@@ -147,6 +147,18 @@
 
     &:hover{
       background-color: #0091ff;
+      i, span{
+        color: white;
+      }
+    }
+  }
+}
+
+.button-nav-disabled {
+  &:hover{
+    background-color: transparent !important;
+    i {
+      color: #8a919b !important;
     }
   }
 }
