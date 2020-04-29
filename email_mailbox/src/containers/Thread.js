@@ -42,7 +42,8 @@ const makeMapStateToProps = () => {
     const threadIds = Array.from(getThreadIds(state, ownProps));
     const threadId = threadIds.indexOf(thread.threadId);
     const isFirstThread = thread.threadId === threadIds[0] ? true : false;
-    const isLastThread = thread.threadId === threadIds[threadIds.length - 1] ? true : false;
+    const isLastThread =
+      thread.threadId === threadIds[threadIds.length - 1] ? true : false;
     const nextThread = !isFirstThread ? threads[threadId - 1].toJS() : null;
     const previousThread = !isLastThread ? threads[threadId + 1].toJS() : null;
     return {
