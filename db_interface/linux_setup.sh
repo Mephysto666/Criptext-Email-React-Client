@@ -17,6 +17,7 @@ function removeTempFolder2() {
   cd ../..; rm -rf "${tempBuildFolder}"; return;
 }
 
+<<<<<<< HEAD
 PEM "    This script will try to install some packages in your system."
 PEM "    Plase use it only in a development environment."
 
@@ -29,6 +30,8 @@ while true; do
     esac
 done
 
+=======
+>>>>>>> a732a738... On branch db_interface/building/arch_support
 # Check lsb_release
 which $lsbCommand > /dev/null 2>&1
 RC=$?
