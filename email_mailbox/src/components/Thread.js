@@ -28,9 +28,7 @@ class Thread extends Component {
   }
 
   render() {
-    const {
-      onSelectThread,
-    } = this.props;
+    const { onSelectThread } = this.props;
     return (
       <div className="thread-container">
         <Message
@@ -53,7 +51,7 @@ class Thread extends Component {
               })}
             </div>
             <div className="thread-navigation-control">
-              <div 
+              <div
                 id="btnPrevNav"
                 className={`thread-previous-button ${
                   this.props.isLastThread ? 'button-nav-disabled' : ''
@@ -61,30 +59,41 @@ class Thread extends Component {
                 data-tip
                 data-for="btnPrevNav"
                 onClick={
-                  !this.props.isLastThread && (() => {
+                  !this.props.isLastThread &&
+                  (() => {
                     onSelectThread(this.props.previousThread);
                   })
                 }
               >
                 <i className="icon-arrow-right" />
                 {!this.props.isLastThread && (
-                  <HeaderActionTooltip className="ignore-transform" target="btnPrevNav" tip={string.mailbox.previous_message} />
+                  <HeaderActionTooltip
+                    className="ignore-transform"
+                    target="btnPrevNav"
+                    tip={string.mailbox.previous_message}
+                  />
                 )}
               </div>
               <div
                 id="btnNextNav"
-                className={this.props.isFirstThread ? 'button-nav-disabled' : ''}
+                className={
+                  this.props.isFirstThread ? 'button-nav-disabled' : ''
+                }
                 data-tip
                 data-for="btnNextNav"
                 onClick={
-                  !this.props.isFirstThread && (() => {
+                  !this.props.isFirstThread &&
+                  (() => {
                     onSelectThread(this.props.nextThread);
                   })
                 }
               >
                 <i className="icon-arrow-right" />
                 {!this.props.isFirstThread && (
-                  <HeaderActionTooltip target="btnNextNav" tip={string.mailbox.next_message} />
+                  <HeaderActionTooltip
+                    target="btnNextNav"
+                    tip={string.mailbox.next_message}
+                  />
                 )}
               </div>
             </div>
@@ -278,6 +287,8 @@ Thread.propTypes = {
   thread: PropTypes.object,
   isFirstThread: PropTypes.bool,
   isLastThread: PropTypes.bool,
+  previousThread: PropTypes.object,
+  nextThread: PropTypes.object
 };
 
 export default Thread;
