@@ -18,6 +18,10 @@ function removeTempFolder2() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> email_composer/navigation_buttons
 PEM "    This script will try to install some packages in your system."
 PEM "    Plase use it only in a development environment."
 
@@ -30,8 +34,6 @@ while true; do
     esac
 done
 
-=======
->>>>>>> df1058c7... On branch db_interface/building/arch_support
 # Check lsb_release
 which $lsbCommand > /dev/null 2>&1
 RC=$?
