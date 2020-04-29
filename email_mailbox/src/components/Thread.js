@@ -28,6 +28,9 @@ class Thread extends Component {
   }
 
   render() {
+    const {
+      onSelectThread,
+    } = this.props;
     return (
       <div className="thread-container">
         <Message
@@ -58,7 +61,9 @@ class Thread extends Component {
                 data-tip
                 data-for="btnPrevNav"
                 onClick={
-                  !this.props.isLastThread && (() => alert('Prev clicked!'))
+                  !this.props.isLastThread && (() => {
+                    onSelectThread(this.props.previousThread);
+                  })
                 }
               >
                 <i className="icon-arrow-right" />
@@ -72,7 +77,9 @@ class Thread extends Component {
                 data-tip
                 data-for="btnNextNav"
                 onClick={
-                  !this.props.isFirstThread && (() => alert('Next clicked!'))
+                  !this.props.isFirstThread && (() => {
+                    onSelectThread(this.props.nextThread);
+                  })
                 }
               >
                 <i className="icon-arrow-right" />
@@ -266,6 +273,7 @@ Thread.propTypes = {
   onUpdateUnreadEmails: PropTypes.func,
   onRemoveLabelIdThread: PropTypes.func,
   onToggleStar: PropTypes.func,
+  onSelectThread: PropTypes.func,
   starred: PropTypes.bool,
   thread: PropTypes.object,
   isFirstThread: PropTypes.bool,
