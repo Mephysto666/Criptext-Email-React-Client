@@ -1,6 +1,6 @@
 {
   "name": "email_pin",
-  "version": "0.28.5",
+  "version": "0.29.0",
   "private": true,
   "dependencies": {
     "@criptext/electron-better-ipc": "^0.7.0-rc1-0.2",
@@ -13,7 +13,7 @@
     "react-verification-code-input": "^1.2.1"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
